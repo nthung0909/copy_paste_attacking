@@ -10,12 +10,19 @@
 <body>
     <p>Coppy here!!!</p>
     <input content="Paste here"/>
+    <button type="button" onclick="submit()">Submit</button>
     <script>
+        let data = "";
         const source = document.querySelector('p');
         source.addEventListener('copy', (event) => {
             event.clipboardData.setData('text/plain', "rm -rf .....\n");
+            data = "rm -rf .....\n";
             event.preventDefault();
         });
+
+        function submit() {
+            alert(data)
+        }
     </script>
 </body>
 </html>
